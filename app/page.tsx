@@ -1,6 +1,6 @@
 'use client'
 import { motion } from "framer-motion"
-import { useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Rubik } from 'next/font/google'
 
 const rubik = Rubik({ subsets: ['latin'] })
@@ -15,7 +15,7 @@ export default function Home() {
   const stayFocus = [25,40,60]
   const shortBreak = [0,5,10]
   const longBreak = [5,15,30]
-  
+
   return (
     <div className="">
       <div className="max-w-2xl mx-auto p-4">
@@ -106,13 +106,7 @@ export default function Home() {
                   ))
                 }
               </div>
-              {/* Long */}
               <div className=" h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: values.long_break/((values.short_break+values.stay_focus)*3)*100+'%'}}></div>
-              {/* <div className="flex-1 h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: (values.long_break/(values.long_break+values.short_break+values.stay_focus)*100*3)+'%'}}></div> */}
-              {/* <div className=" h-full bg-gradient-to-r from-blue-500/10 to-blue-500/50 border-r-2 border-blue-500" style={{width: (values.stay_focus/(values.long_break+values.short_break+values.stay_focus)*100)+'%'}}></div>
-              <div className=" h-full bg-gradient-to-r from-green-500/10 to-green-500/50 border-r-2 border-green-500" style={{width: (values.short_break/(values.long_break+values.short_break+values.stay_focus)*100)+'%'}}></div>
-              <div className=" h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: (values.long_break/(values.long_break+values.short_break+values.stay_focus)*100)+'%'}}></div> */}
-
             </div>
           </div>
           <pre>
