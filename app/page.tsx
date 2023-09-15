@@ -95,7 +95,37 @@ export default function Home() {
 
           <div>
             <div className="text-lg text-neutral-300 mb-2">{'Preview'}</div>
-            <div className="bg-neutral-800/50 backdrop-blur w-full h-[60px] relative rounded-lg overflow-hidden flex">
+            <div className="flex items-center h-[60px]">
+              {new Array(values.session_rounds).fill(null).map((item,key)=>(
+                <>
+                  <div className="bg-blue-500 h-full" style={{width: values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}} ></div>
+                  {
+                    key % 4 === 3 ?
+                    <div className="bg-orange-500 w-[150px] h-full" style={{width: values.long_break*3/((values.stay_focus+values.short_break)*3) *100 + '%'}}></div>:
+                    <div className="bg-green-500 h-full" style={{width: 100 - values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}}></div>
+                  }
+                </>
+              ))}
+            </div>
+            {/* <div className="flex items-center">
+              <div className="bg-neutral-800/50 backdrop-blur h-[60px] rounded-lg overflow-hidden flex-1 flex">
+                <div className="bg-blue-500/80 h-full  flex items-center justify-center text-xl px-4" style={{width: values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}} >
+                  {values.stay_focus} Min
+                </div>
+                {
+                  values.short_break > 0 &&
+                  <div className="bg-green-500/80 h-full flex-1  flex items-center justify-center text-xl px-4 whitespace-nowrap" >
+                    {values.short_break} Min
+                  </div>
+                }
+              </div>
+              <div className="mx-2 font-bold text-2xl">X3</div>
+              <div className="icon-[ri--add-line] text-2xl text-neutral-500 mr-2" />
+              <div className=" bg-orange-500/80 backdrop-blur h-[60px] rounded-lg overflow-hidden flex items-center justify-center text-xl px-4">
+                {values.long_break} Min
+              </div>
+            </div> */}
+            {/* <div className="bg-neutral-800/50 backdrop-blur w-full h-[60px] relative rounded-lg overflow-hidden flex">
               <div className="flex flex-1">
                 {
                   new Array(3).fill(null).map((item,key)=>(
@@ -107,7 +137,7 @@ export default function Home() {
                 }
               </div>
               <div className=" h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: values.long_break/((values.short_break+values.stay_focus)*3)*100+'%'}}></div>
-            </div>
+            </div> */}
           </div>
           <pre>
             {JSON.stringify(values, null, '  ')}
