@@ -83,9 +83,13 @@ export default function Home() {
           <div>
             <div className="text-lg text-neutral-300 mb-2">{'Session Rounds'}</div>
             <div className="grid grid-cols-3 items-center text-center font-bold text-2xl lg:text-3xl rounded-lg border-2 border-neutral-800 h-[60px]">
-              <div></div>
+              <button className="flex items-center justify-center text-neutral-500 hover:bg-neutral-700 hover:text-neutral-300 rounded-l-md h-full disabled:hover:bg-transparent disabled:hover:text-neutral-700 disabled:text-neutral-700"  onClick={()=>{setValues(v=>({...v, session_rounds: v.session_rounds - 1}))}} disabled={values.session_rounds <= 1}>
+                <div className="icon-[ri--subtract-line]" />
+              </button>
               <div>{values.session_rounds}</div>
-              <div></div>
+              <button className="flex items-center justify-center text-neutral-500 hover:bg-neutral-700 hover:text-neutral-300 rounded-r-md h-full"  onClick={()=>{setValues(v=>({...v, session_rounds: v.session_rounds + 1}))}}>
+                <div className="icon-[ri--add-line]" />
+              </button>
             </div>
           </div>
 
