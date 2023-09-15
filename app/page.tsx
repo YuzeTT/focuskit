@@ -95,8 +95,24 @@ export default function Home() {
 
           <div>
             <div className="text-lg text-neutral-300 mb-2">{'Preview'}</div>
-            <div className="bg-neutral-800/50 backdrop-blur w-full h-[60px] relative rounded-lg overflow-hidden">
-              <div className="absolute h-full w-[30%] bg-gradient-to-r from-blue-500/10 to-blue-500/50 border-r-2 border-blue-500"></div>
+            <div className="bg-neutral-800/50 backdrop-blur w-full h-[60px] relative rounded-lg overflow-hidden flex">
+              <div className="flex flex-1">
+                {
+                  new Array(3).fill(null).map((item,key)=>(
+                    <div key={key} className="flex flex-1 h-full">
+                      <div className=" h-full bg-gradient-to-r from-blue-500/10 to-blue-500/50 border-r-2 border-blue-500" style={{width: (values.stay_focus/(values.short_break+values.stay_focus)*100)+'%'}}></div>
+                      <div className=" h-full bg-gradient-to-r from-green-500/10 to-green-500/50 border-r-2 border-green-500" style={{width: (values.short_break/(values.short_break+values.stay_focus)*100)+'%'}}></div>
+                    </div>
+                  ))
+                }
+              </div>
+              {/* Long */}
+              <div className=" h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: values.long_break/((values.short_break+values.stay_focus)*3)*100+'%'}}></div>
+              {/* <div className="flex-1 h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: (values.long_break/(values.long_break+values.short_break+values.stay_focus)*100*3)+'%'}}></div> */}
+              {/* <div className=" h-full bg-gradient-to-r from-blue-500/10 to-blue-500/50 border-r-2 border-blue-500" style={{width: (values.stay_focus/(values.long_break+values.short_break+values.stay_focus)*100)+'%'}}></div>
+              <div className=" h-full bg-gradient-to-r from-green-500/10 to-green-500/50 border-r-2 border-green-500" style={{width: (values.short_break/(values.long_break+values.short_break+values.stay_focus)*100)+'%'}}></div>
+              <div className=" h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: (values.long_break/(values.long_break+values.short_break+values.stay_focus)*100)+'%'}}></div> */}
+
             </div>
           </div>
           <pre>
