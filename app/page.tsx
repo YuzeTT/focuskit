@@ -95,14 +95,14 @@ export default function Home() {
 
           <div>
             <div className="text-lg text-neutral-300 mb-2">{'Preview'}</div>
-            <div className="flex items-center h-[60px]">
+            <div className="flex items-center h-[60px] rounded-lg overflow-hidden">
               {new Array(values.session_rounds).fill(null).map((item,key)=>(
                 <>
-                  <div className="bg-blue-500 h-full" style={{width: values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}} ></div>
+                  <div className="bg-gradient-to-r from-blue-500/20 to-blue-500/50 h-full border-r-2 border-blue-500" style={{width: values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}} ></div>
                   {
                     key % 4 === 3 ?
-                    <div className="bg-orange-500 w-[150px] h-full" style={{width: values.long_break*3/((values.stay_focus+values.short_break)*3) *100 + '%'}}></div>:
-                    <div className="bg-green-500 h-full" style={{width: 100 - values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}}></div>
+                    <div className="bg-gradient-to-r from-orange-500/20 to-orange-500/50 border-r-2 border-orange-500 w-[150px] h-full" style={{width: values.long_break*3/((values.stay_focus+values.short_break)*3) *100 + '%'}}></div>:
+                    <div className="bg-gradient-to-r from-green-500/20 to-green-500/50 border-r-2 border-green-500 h-full" style={{width: 100 - values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}}></div>
                   }
                 </>
               ))}
