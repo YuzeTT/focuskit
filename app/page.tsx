@@ -1,6 +1,6 @@
 'use client'
 import { motion } from "framer-motion"
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Rubik } from 'next/font/google'
 
 const rubik = Rubik({ subsets: ['latin'] })
@@ -107,41 +107,12 @@ export default function Home() {
                 </>
               ))}
             </div>
-            {/* <div className="flex items-center">
-              <div className="bg-neutral-800/50 backdrop-blur h-[60px] rounded-lg overflow-hidden flex-1 flex">
-                <div className="bg-blue-500/80 h-full  flex items-center justify-center text-xl px-4" style={{width: values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}} >
-                  {values.stay_focus} Min
-                </div>
-                {
-                  values.short_break > 0 &&
-                  <div className="bg-green-500/80 h-full flex-1  flex items-center justify-center text-xl px-4 whitespace-nowrap" >
-                    {values.short_break} Min
-                  </div>
-                }
-              </div>
-              <div className="mx-2 font-bold text-2xl">X3</div>
-              <div className="icon-[ri--add-line] text-2xl text-neutral-500 mr-2" />
-              <div className=" bg-orange-500/80 backdrop-blur h-[60px] rounded-lg overflow-hidden flex items-center justify-center text-xl px-4">
-                {values.long_break} Min
-              </div>
-            </div> */}
-            {/* <div className="bg-neutral-800/50 backdrop-blur w-full h-[60px] relative rounded-lg overflow-hidden flex">
-              <div className="flex flex-1">
-                {
-                  new Array(3).fill(null).map((item,key)=>(
-                    <div key={key} className="flex flex-1 h-full">
-                      <div className=" h-full bg-gradient-to-r from-blue-500/10 to-blue-500/50 border-r-2 border-blue-500" style={{width: (values.stay_focus/(values.short_break+values.stay_focus)*100)+'%'}}></div>
-                      <div className=" h-full bg-gradient-to-r from-green-500/10 to-green-500/50 border-r-2 border-green-500" style={{width: (values.short_break/(values.short_break+values.stay_focus)*100)+'%'}}></div>
-                    </div>
-                  ))
-                }
-              </div>
-              <div className=" h-full bg-gradient-to-r from-orange-500/10 to-orange-500/50 border-r-2 border-orange-500" style={{width: values.long_break/((values.short_break+values.stay_focus)*3)*100+'%'}}></div>
-            </div> */}
           </div>
-          <pre>
-            {JSON.stringify(values, null, '  ')}
-          </pre>
+          <div className="h-[1px] bg-neutral-800 mx-auto"></div>
+          <button className="w-full bg-blue-500/20 h-[60px] rounded-lg flex items-center justify-center">
+            <div className="icon-[ri--play-fill] text-xl mr-2" />
+            START
+          </button>
         </div>
       </div>
     </div>
