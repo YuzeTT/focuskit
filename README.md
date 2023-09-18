@@ -14,9 +14,10 @@
   <a href="https://github.com/YuzeTT/focuskit/blob/main/LICENSE">
     <image src="https://img.shields.io/github/license/YuzeTT/focuskit" alt="License" />
   </a>
-  <a href="https://github.com/YuzeTT/focuskit/blob/main/package.json">
+  <!-- <a href="https://github.com/YuzeTT/focuskit/blob/main/package.json">
     <image src="https://img.shields.io/github/package-json/v/YuzeTT/focuskit" alt="License" />
-  </a>
+  </a> -->
+  <image src="https://img.shields.io/github/package-json/v/YuzeTT/focuskit" alt="License" />
 
   
 

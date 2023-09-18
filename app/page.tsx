@@ -18,8 +18,8 @@ export default function Home() {
 
   return (
     <div className="">
-      <div className="max-w-2xl mx-auto p-4">
-        <div className={`backdrop-blur-xl p-4 z-50 space-y-8 ${rubik.className}`}>
+      <div className="max-w-2xl mx-auto px-6 pb-6">
+        <div className={`backdrop-blur-xl z-50 space-y-8 ${rubik.className}`}>
           <div>
             <div className="text-lg text-neutral-300 mb-2">{'Stay Focus (Min)'}</div>
             <div className="grid grid-cols-4 text-center font-bold text-2xl lg:text-3xl rounded-lg border-2 border-neutral-800">
