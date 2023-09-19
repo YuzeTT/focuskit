@@ -1,7 +1,8 @@
 'use client'
 import { motion } from "framer-motion"
-import { useState } from "react";
-import { Rubik } from 'next/font/google'
+import { Fragment, useState } from "react";
+import { Figtree, Rubik } from 'next/font/google'
+import Footer from "./footer";
 
 const rubik = Rubik({ subsets: ['latin'] })
 
@@ -9,7 +10,7 @@ export default function Home() {
   const [values, setValues] = useState({
     stay_focus: 25,
     short_break: 5,
-    long_break: 15,
+    long_break: 30,
     session_rounds: 1
   })
   const stayFocus = [25,40,60]
@@ -97,14 +98,14 @@ export default function Home() {
             <div className="text-lg text-neutral-300 mb-2">{'Preview'}</div>
             <div className="flex items-center h-[60px] rounded-lg overflow-hidden">
               {new Array(values.session_rounds).fill(null).map((item,key)=>(
-                <>
+                <Fragment key={key}>
                   <div className="bg-gradient-to-r from-blue-500/20 to-blue-500/50 h-full border-r-2 border-blue-500" style={{width: values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}} ></div>
                   {
                     key % 4 === 3 ?
                     <div className="bg-gradient-to-r from-orange-500/20 to-orange-500/50 border-r-2 border-orange-500 w-[150px] h-full" style={{width: values.long_break*3/((values.stay_focus+values.short_break)*3) *100 + '%'}}></div>:
                     <div className="bg-gradient-to-r from-green-500/20 to-green-500/50 border-r-2 border-green-500 h-full" style={{width: 100 - values.stay_focus/(values.stay_focus+values.short_break) *100 + '%'}}></div>
                   }
-                </>
+                </Fragment>
               ))}
             </div>
           </div>
@@ -115,6 +116,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   )
 }
